@@ -6,8 +6,7 @@
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watch",
-    "compile": "tsc",
-    "prepublish": "test"
+    "compile": "tsc"
   },
   "files": [
     "dist/index.js",
