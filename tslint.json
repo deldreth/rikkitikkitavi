@@ -1,0 +1,52 @@
+{
+  "extends": "tslint:latest",
+  "rules": {
+    "no-console": false,
+    "arrow-parens": false,
+    "only-arrow-functions": false,
+    "space-before-function-paren": [true, 1],
+    "no-shadowed-variables": false,
+    "no-var-requires": false,
+    "no-namespace": false,
+    "trailing-comma": false,
+    "interface-name": false,
+    "no-implicit-dependencies": false,
+    "no-trailing-whitespace": false,
+    "object-literal-sort-keys": false,
+    "object-literal-key-quotes": false,
+    "no-submodule-imports": false,
+    "no-empty-interface": false,
+    "no-bitwise": false,
+    "member-access": false,
+    "max-classes-per-file": false,
+    "semicolon": [true, "always", "strict-bound-class-methods"],
+    "variable-name": [
+      true,
+      "ban-keywords",
+      "check-format",
+      "allow-pascal-case",
+      "allow-snake-case"
+    ],
+    "quotemark": [true, "single", "jsx-double", "avoid-escape"],
+    "whitespace": [
+      true,
+      "check-branch",
+      "check-module",
+      "check-decl",
+      "check-operator",
+      "check-typecast"
+    ]
+  },
+  "ban-types": {
+    "options": [
+      ["Object", "Avoid using the `Object` type. Did you mean `object`?"],
+      [
+        "Function",
+        "Avoid using the `Function` type. Prefer a specific function type, like `() => void`, or use `ts.AnyFunction`."
+      ],
+      ["Boolean", "Avoid using the `Boolean` type. Did you mean `boolean`?"],
+      ["Number", "Avoid using the `Number` type. Did you mean `number`?"],
+      ["String", "Avoid using the `String` type. Did you mean `string`?"]
+    ]
+  }
+}

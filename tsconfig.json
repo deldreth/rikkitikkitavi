@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "esModuleInterop": true,
+    "declaration": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "target": "es5",
+    "lib": ["dom", "es2015", "es2016", "es2017"],
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "noEmitHelpers": false
+  },
+  "include": ["src/**/*"]
+}
