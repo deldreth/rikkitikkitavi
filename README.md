@@ -1,5 +1,7 @@
 # rikkitikkitavi
 
+[![CircleCI](https://circleci.com/gh/deldreth/rikkitikkitavi.svg?style=svg)](https://circleci.com/gh/deldreth/rikkitikkitavi)
+
 This is a very simple script that allows for "querying" a data store (object) for truthiness based on an object literal similar MongoDB queries. It's like validation but intended to be used for quickly determining if some object matches expectations.
 
 It supports basic comparison and quality operators and two aggregate-like operators.
