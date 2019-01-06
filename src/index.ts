@@ -45,7 +45,7 @@ interface INin {
   $nin: StoredArray;
 }
 
-export type Operator =
+type Operator =
   | IEq
   | IBetween
   | ILessThan
@@ -63,7 +63,7 @@ interface FieldOperation {
   [field: string]: Operator;
 }
 
-export interface Store {
+interface Store {
   [key: string]: any;
 }
 
@@ -71,8 +71,6 @@ interface Countable {
   $items: FieldOperation[];
   $op: Operator;
 }
-
-export type Expression = Array<FieldOperation | ICount>;
 
 const functions = {
   operate(obj: Store, key: string, operator: Operator): boolean {
@@ -100,18 +98,18 @@ const functions = {
     let count = 0;
     countable.$items.forEach(item => {
       Object.keys(item).forEach(key => {
-        if (functions.operate(obj, key, item[key])) {
+        if (this.operate(obj, key, item[key])) {
           count++;
         }
       });
     });
 
-    return functions.operate({ count }, 'count', countable.$op);
+    return this.operate({ count }, 'count', countable.$op);
   },
   $match(obj: Store, matches: FieldOperation) {
     let result = false;
     Object.keys(matches).forEach(field => {
-      result = functions.operate(obj, field, matches[field]);
+      result = this.operate(obj, field, matches[field]);
     });
 
     return result;
@@ -134,9 +132,12 @@ const functions = {
   },
 };
 
-export default function(expr: Expression, obj: Store): boolean {
+export default function(
+  expression: Array<FieldOperation | ICount>,
+  obj: Store
+): boolean {
   const results: boolean[] = [];
-  expr.forEach(op => {
+  expression.forEach(op => {
     const field = Object.keys(op)[0];
     const func = Object.values(op)[0];
 
