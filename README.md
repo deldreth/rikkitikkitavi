@@ -76,7 +76,7 @@ const store = [
 
 const matches = rikkitikkitavi([
   {
-    $matches: {
+    $match: {
       juice: { $eq: 'Apple' },
       rating: { $gte: 4 }
     }
@@ -89,7 +89,7 @@ const matches = rikkitikkitavi([
       $items: [
         { boxes: { $gte: 5 }},
         {
-          $matches: {
+          $match: {
             juice: { $eq: 'Apple' },
             rating: { $gte: 4 }
           }
