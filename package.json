@@ -1,7 +1,7 @@
 {
   "name": "rikkitikkitavi",
   "version": "1.0.0",
-  "description": "",
+  "description": "Simple script that allows for \"querying\" a data store (object) for truthiness based on an object literal structurally similar to MongoDB's query language.",
   "main": "dist/index.js",
   "scripts": {
     "test": "jest",
